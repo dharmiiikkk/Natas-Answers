@@ -1,5 +1,5 @@
-# Natas-Answers
-A brief guide to solving Natas Challenges on OverTheWire platform.
+# NATAS Walkthrough
+A brief guide to solving Natas Challenges on the OverTheWire platform.
 
 ## Natas answers for levels 1 - 15
 ### Level 0 -> 1
@@ -10,14 +10,24 @@ In level 0, after logging in, right-click on the webpage to view the source code
 ### Level 1 -> 2
 credentials are username - _natas1_	and password - _g9D9cREhslqBKtcA2uocGHPfMZVzeFK6_
 
-In this level, 
+This level is similar to the previous level, only that right-click is now blocked. So instead we use the keyboard shortcut (_usually **ctrl+shift+c**, but could be different in the browser that you are using)  
 
+### Level 2 -> 3
+Credentials are username - _natas2_ and password - _h4ubbcXrWqsTo7GGnnUMLppXbOogfBZ7_
 
-natas2	h4ubbcXrWqsTo7GGnnUMLppXbOogfBZ7
+We can view the source code at this level, but there are no comments. We do find another directory referenced in the source code as `<img src='files/pixel.png>` indicating that there is another directory where files exist. So you add the directory `/files` to the current url. 
+You should see a list of files in that directory and notice there is another file named _users.txt_. You should be able to find the password for the next level when reading this file.
 
-natas3	G6ctbMJ5Nb4cbFwhpMPSvxGHhQ7I6W8Q
+### Level 3 -> 4
+Credentials are username - _natas3_	 and password - _G6ctbMJ5Nb4cbFwhpMPSvxGHhQ7I6W8Q_
 
-natas4	tKOcJIbzM4lTs8hbCmzn5Zr4434fGZQm
+In the source code of this webpage, we find a comment that says `<!-- No more information leaks!! Not even Google will find it this time... -->` This hints us to look at the **_robots.txt_** file. So you add `/robots.txt` to the url to view that file. This file tells 
+search engines which directories they can or cannot crawl on the website. In this file, we find a directory that has not been allowed for crawling by bots, `s3cr3ts`. Now we replace the `/robots.txt` with the new found directory, and find `users.txt` file, similar to previous challenge. Here you will find password for the next level.
+
+### Level 4 -> 5
+Credentials are username - _natas4_	 and password - _tKOcJIbzM4lTs8hbCmzn5Zr4434fGZQm_
+
+This level would require you to understand how to use Burpsuite (or other tool to manipulate headers).
 
 natas5	Z0NsrtIkJoKALBCLi5eqFfcRN82Au2oD
 
