@@ -26,29 +26,7 @@ search engines which directories they can or cannot crawl on the website. In thi
 ### Level 4 -> 5
 Credentials are username - _natas4_	 and password - _tKOcJIbzM4lTs8hbCmzn5Zr4434fGZQm_
 
-> This level would require you to understand how to use Burpsuite (or other tool to manipulate headers). After logging into the website using the credentials found in the previous challenge, capture the headers that were sent in the GET request. Now, you will need to change the natas level from `natas4...(rest of the value is same)` to `natas5...(rest of the value is same as original)`. After changing the URL Referrer, send the GET request with the modified headers. You should be able to view the password for next level on the page content that gets returned to the request made. 
+> This level would require you to understand how to use Burpsuite (or other tool to manipulate headers). After logging into the website using the credentials found in the previous challenge, capture the headers that were sent in the GET request. Now, you will need to change the natas level from `natas4`(rest of the value is same) to `natas5`(rest of the value is same as original). After changing the URL Referrer, send the GET request with the modified headers. You should be able to view the password for next level on the page content that gets returned to the request made. 
 
-natas5	Z0NsrtIkJoKALBCLi5eqFfcRN82Au2oD
 
-natas6	fOIvE0MDtPTgRhqmmvvAOt2EfXR6uQgR
-
-natas7	jmxSiH3SP6Sonf8dv66ng8v1cIEdjXWr 
-
-natas8	a6bZCNYwdKqN5cGP11ZdtPg0iImQQhAB
-
-natas9 	Sda6t0vkOPkM8YeOZkAGVhFoaplvlJFd
-
-natas10	D44EcsFkLxPIkAAKLosx8z3hxX1Z4MCE
-
-natas11	1KFqoJXi6hRaPluAmk8ESDW4fSysRoIg
-
-natas12	YWqo0pjpcXzSIl5NMAVxg12QxeC1w9QG
-
-natas13	lW3jYRI02ZKDBb8VtQBU1f6eDRo6WEj9
-
-natas14	qPazSJBmrmU7UQJv17MHk1PGC4DxZMEP
-
-natas15	TTkaI7AWG4iDERztBcEyKV7kRXH1EZRB
-
-natas16 TRD7iZrd5gATjj9PkPEuaOlfEjHqj32V
 
